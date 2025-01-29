@@ -11,8 +11,18 @@ public class Poker {
     public String getHandType(){
         //array to keep track of all types of cards(suits)
         int [] type = new int[13];
+        //type reads one line
         for (String card : cards){
-
+            int index = getCardIndex(card);
+            if(index!=-1){
+                type[index]++;
+            }
+        }
+        //example for type
+        //{2,3,0,0,0,0,0,0,0,0,0,0,0}
+        //first count will be 2, next 3, then 0
+        for (int count : type){
+            //add variables to instantiate count of each card type
         }
         return "e";
 
