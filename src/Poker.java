@@ -8,6 +8,15 @@ public class Poker {
         bidAmount = bid;
         cards = suits;
     }
+    public String getHandType(){
+        //array to keep track of all types of cards(suits)
+        int [] type = new int[13];
+        for (String card : cards){
+
+        }
+        return "e";
+
+    }
 
     public int countCards(){
 

@@ -6,6 +6,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        int fiveOfAKind = 0;
+        int fullHouse = 0;
+        int fourOfAKind = 0;
+        int threeOfAKind = 0;
+        int twoPair = 0;
+        int onePair = 0;
+        int highCard = 0;
 
         ArrayList<String> fileData = getFileData("src/TestInputFile");
         // you now have a list of Strings from the file "InputFile"
