@@ -22,9 +22,9 @@ public class Main {
             int bidAmount = calcBidValue(fileDatum);
             Poker newPoker = new Poker(bidAmount, fileArray);
             System.out.println(Arrays.toString(fileArray));
-            System.out.println(newPoker.getHandType());
+            System.out.println(newPoker.getHandType(fileArray));
 
-            String hand = newPoker.getHandType();
+            String hand = newPoker.getHandType(fileArray);
             if(hand.equals("Five of a kind")){
                 fiveOfAKind++;
             }
@@ -88,4 +88,6 @@ public class Main {
         String[] fileArray = fileDatum1.split(",");
         return fileArray;
     }
+
+
 }
