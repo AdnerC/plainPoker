@@ -24,8 +24,36 @@ public class Main {
             System.out.println(bidAmount);;
             int totalSimilarCount = 0;
             Poker newPoker = new Poker(bidAmount, fileArray);
-
+            String hand = newPoker.getHandType();
+            if(hand.equals("Five of a kind")){
+                fiveOfAKind++;
+            }
+            if(hand.equals("Four of a kind")){
+                fourOfAKind++;
+            }
+            if(hand.equals("Full house")){
+                fullHouse++;
+            }
+            if(hand.equals("Three of a kind")){
+                threeOfAKind++;
+            }
+            if(hand.equals("Two pairs")){
+                twoPair++;
+            }
+            if(hand.equals("One pair")){
+                onePair++;
+            }
+            if(hand.equals("High Card")){
+                highCard++;
+            }
         }
+        System.out.println("Number of five of a kind hands: " + fiveOfAKind);
+        System.out.println("Number of full house hands: " + fullHouse);
+        System.out.println("Number of four of a kind hands: " + fourOfAKind);
+        System.out.println("Number of three of a kind hands: " + threeOfAKind);
+        System.out.println("Number of two pair hands: " + twoPair);
+        System.out.println("Number of one pair hands: " + onePair);
+        System.out.println("Number of high card hands: " + highCard);
 
 
     }
