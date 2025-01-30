@@ -15,15 +15,14 @@ public class Main {
         int highCard = 0;
 
         ArrayList<String> fileData = getFileData("src/TestInputFile");
-        // you now have a list of Strings from the file "InputFile"
+        // you now have a list of Strings from the file "TestInputFile"
         for (String fileDatum : fileData) {
-
             String[] fileArray = getCardList(fileDatum);
 
             int bidAmount = calcBidValue(fileDatum);
-            System.out.println(bidAmount);;
-            int totalSimilarCount = 0;
             Poker newPoker = new Poker(bidAmount, fileArray);
+            System.out.println(Arrays.toString(fileArray));
+            System.out.println(newPoker.getHandType());
 
         }
 
