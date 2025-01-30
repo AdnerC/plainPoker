@@ -21,10 +21,52 @@ public class Poker {
         //example for type
         //{2,3,0,0,0,0,0,0,0,0,0,0,0}
         //first count will be 2, next 3, then 0
+
         for (int count : type){
-            //add variables to instantiate count of each card type
+            if (count==5){
+                return "Five of a kind";
+            }
+            if (count==4){
+                return "Four of a kind";
+            }
+
+            if(count == 3){
+                boolean pair =false;
+                for (int j : type) {
+                    if (j == 2) {
+                        pair = true;
+                    }
+                    if (pair = true){
+                        return "Full house";
+                    }else {
+                        return "Three of a kind";
+                    }
+                }
+            }
+            if (count==2){
+                boolean onePair1 = false;
+                boolean onePair2 = false;
+
+                for (int j : type) {
+                    if (j==2){
+                        if (!onePair2 && onePair1){
+                            onePair2=true;
+                        }
+                        if (!onePair1){
+                            onePair1=true;
+                        }
+                    }
+                }
+                if (onePair1&&onePair2){
+                    return "Two pair";
+                }else {
+                    return "One pair";
+                }
+
+                }
+
         }
-        return "e";
+        return "High card";
 
     }
 
