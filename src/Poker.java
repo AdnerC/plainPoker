@@ -31,16 +31,17 @@ public class Poker {
             }
 
             if(count == 3){
-                boolean pair =false;
+                boolean pair = false;
                 for (int j : type) {
                     if (j == 2) {
                         pair = true;
                     }
-                    if (pair = true){
-                        return "Full house";
-                    }else {
-                        return "Three of a kind";
-                    }
+
+                }
+                if (pair){
+                    return "Full house";
+                }else {
+                    return "Three of a kind";
                 }
             }
             if (count==2){
