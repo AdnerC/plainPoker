@@ -37,13 +37,13 @@ public class Main {
             if(hand.equals("Three of a kind")){
                 threeOfAKind++;
             }
-            if(hand.equals("Two pairs")){
+            if(hand.equals("Two pair")){
                 twoPair++;
             }
             if(hand.equals("One pair")){
                 onePair++;
             }
-            if(hand.equals("High Card")){
+            if(hand.equals("High card")){
                 highCard++;
             }
         }
