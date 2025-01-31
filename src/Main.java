@@ -13,16 +13,18 @@ public class Main {
         int twoPair = 0;
         int onePair = 0;
         int highCard = 0;
+        ArrayList<Poker> hands = new ArrayList<Poker>();
 
         ArrayList<String> fileData = getFileData("src/TestInputFile");
         // you now have a list of Strings from the file "TestInputFile"
         for (String fileDatum : fileData) {
             String[] fileArray = getCardList(fileDatum);
-
             int bidAmount = calcBidValue(fileDatum);
             Poker newPoker = new Poker(bidAmount, fileArray);
+            hands.add(newPoker);
             System.out.println(Arrays.toString(fileArray));
             System.out.println(newPoker.getHandType(fileArray));
+            System.out.println(bidAmount);
 
             String hand = newPoker.getHandType(fileArray);
             if(hand.equals("Five of a kind")){
@@ -54,6 +56,11 @@ public class Main {
         System.out.println("Number of two pair hands: " + twoPair);
         System.out.println("Number of one pair hands: " + onePair);
         System.out.println("Number of high card hands: " + highCard);
+        System.out.println("Total Hands: ");
+        System.out.println();
+        System.out.println("----------------------------------");
+
+
 
 
     }

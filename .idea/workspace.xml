@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e581c84-58eb-4f26-b0ef-3afc61bbd115" name="Changes" comment="Now properly displays the count of each hand type">
+    <list default="true" id="8e581c84-58eb-4f26-b0ef-3afc61bbd115" name="Changes" comment="created a method for comparing 2 different hands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Poker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Poker.java" afterDir="false" />
@@ -93,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738250990280</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="created a method for comparing 2 different hands">
+      <option name="closed" value="true" />
+      <created>1738252722522</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738252722522</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -108,6 +116,7 @@
     <MESSAGE value="started poker class" />
     <MESSAGE value="filtered to card types based on type list" />
     <MESSAGE value="Now properly displays the count of each hand type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now properly displays the count of each hand type" />
+    <MESSAGE value="created a method for comparing 2 different hands" />
+    <option name="LAST_COMMIT_MESSAGE" value="created a method for comparing 2 different hands" />
   </component>
 </project>

@@ -8,7 +8,7 @@ public class Poker {
         bidAmount = bid;
         cards = suits;
     }
-    public String getHandType(String[] hand){
+    public static String getHandType(String[] hand){
         //array to keep track of all types of cards(suits)
         int [] type = new int[13];
         //type reads one line
@@ -21,8 +21,10 @@ public class Poker {
         //example for type
         //{2,3,0,0,0,0,0,0,0,0,0,0,0}
         //first count will be 2, next 3, then 0
+        System.out.println(Arrays.toString(type));
 
         for (int count : type){
+
             if (count==5){
                 return "Five of a kind";
             }
@@ -31,18 +33,14 @@ public class Poker {
             }
 
             if(count == 3){
-                boolean pair = false;
                 for (int j : type) {
                     if (j == 2) {
-                        pair = true;
+                        return "Full house";
+                    }else if (j==1){
+                        return "Three of a kind";
                     }
+                }
 
-                }
-                if (pair){
-                    return "Full house";
-                }else {
-                    return "Three of a kind";
-                }
             }
             if (count==2){
                 boolean onePair1 = false;
@@ -56,6 +54,9 @@ public class Poker {
                         if (!onePair1){
                             onePair1=true;
                         }
+                    } else if (j==3) {
+                        return "Full house";
+
                     }
                 }
                 if (onePair1&&onePair2){
@@ -75,7 +76,7 @@ public class Poker {
         return 0;
     }
 
-    public int getCardIndex(String card){
+    public static int getCardIndex(String card){
         //if a specific card type is found, its index is returned
         String[] cardTypes = {"Ace","King","Queen","Jack","10","9","8",
         "7","6","5","4","3","2","1"};
@@ -86,7 +87,9 @@ public class Poker {
         return -1;
     }
 
-    public String[] compareTwoHands(String[] firstHand,String[] secondHand){
+    public static String[] compareTwoHands(Poker first,Poker second){
+        String[] firstHand = first.getCards();
+        String[] secondHand = second.getCards();
         String[] cardTypes = {"Ace","King","Queen","Jack","10","9","8",
                 "7","6","5","4","3","2","1"};
         if (getTypeValue(getHandType(firstHand))>getTypeValue(getHandType(secondHand))){
@@ -106,7 +109,7 @@ public class Poker {
         return cardTypes;
     }
 
-    public int getTypeValue(String type){
+    public static   int getTypeValue(String type){
         if (type.equals("Five of a kind")){
             return 100;
         }
@@ -128,7 +131,7 @@ public class Poker {
         return 9999;
     }
 
-    public int getCardValue(String card){
+    public static int getCardValue(String card){
         if (card.equals("Ace")){
             return 100;
         }
@@ -171,6 +174,15 @@ public class Poker {
         return 9999;
     }
 
+    public String toString(){
+        return cards+""+bidAmount;
+    }
 
+    public int getBidAmount() {
+        return bidAmount;
+    }
 
+    public String[] getCards() {
+        return cards;
+    }
 }
