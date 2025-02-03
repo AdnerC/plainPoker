@@ -4,6 +4,7 @@ public class Poker {
     private int bidAmount;
     private String[] cards;
 
+
     public Poker(int bid, String[] suits){
         bidAmount = bid;
         cards = suits;
@@ -21,7 +22,6 @@ public class Poker {
         //example for type
         //{2,3,0,0,0,0,0,0,0,0,0,0,0}
         //first count will be 2, next 3, then 0
-        System.out.println(Arrays.toString(type));
 
         for (int count : type){
 
@@ -79,7 +79,7 @@ public class Poker {
     public static int getCardIndex(String card){
         //if a specific card type is found, its index is returned
         String[] cardTypes = {"Ace","King","Queen","Jack","10","9","8",
-        "7","6","5","4","3","2","1"};
+        "7","6","5","4","3","2"};
         for (int i = 0; i < cardTypes.length; i++){
             if(cardTypes[i].equals(card))
                 return i;
@@ -91,7 +91,7 @@ public class Poker {
         String[] firstHand = first.getCards();
         String[] secondHand = second.getCards();
         String[] cardTypes = {"Ace","King","Queen","Jack","10","9","8",
-                "7","6","5","4","3","2","1"};
+                "7","6","5","4","3","2"};
         if (getTypeValue(getHandType(firstHand))>getTypeValue(getHandType(secondHand))){
             return firstHand;
         }
@@ -185,4 +185,6 @@ public class Poker {
     public String[] getCards() {
         return cards;
     }
+
+
 }

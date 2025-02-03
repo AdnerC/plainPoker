@@ -15,38 +15,50 @@ public class Main {
         int highCard = 0;
         ArrayList<Poker> hands = new ArrayList<Poker>();
 
+        ArrayList<Poker> fiveHands = new ArrayList<Poker>();
+        ArrayList<Poker> fourHands = new ArrayList<Poker>();
+        ArrayList<Poker> threeHands = new ArrayList<Poker>();
+        ArrayList<Poker> fullHands = new ArrayList<Poker>();
+        ArrayList<Poker> twoHands = new ArrayList<Poker>();
+        ArrayList<Poker> oneHands = new ArrayList<Poker>();
+        ArrayList<Poker> highHands = new ArrayList<Poker>();
+
+
         ArrayList<String> fileData = getFileData("src/TestInputFile");
         // you now have a list of Strings from the file "TestInputFile"
         for (String fileDatum : fileData) {
-            String[] fileArray = getCardList(fileDatum);
-            int bidAmount = calcBidValue(fileDatum);
-            Poker newPoker = new Poker(bidAmount, fileArray);
-            hands.add(newPoker);
-            System.out.println(Arrays.toString(fileArray));
-            System.out.println(newPoker.getHandType(fileArray));
-            System.out.println(bidAmount);
 
-            String hand = newPoker.getHandType(fileArray);
+            Poker newPoker = new Poker(calcBidValue(fileDatum), getCardList(fileDatum));
+            hands.add(newPoker);
+
+            String hand = Poker.getHandType(getCardList(fileDatum));
             if(hand.equals("Five of a kind")){
                 fiveOfAKind++;
+                fiveHands.add(newPoker);
             }
             if(hand.equals("Four of a kind")){
                 fourOfAKind++;
+                fourHands.add(newPoker);
             }
             if(hand.equals("Full house")){
                 fullHouse++;
+                fullHands.add(newPoker);
             }
             if(hand.equals("Three of a kind")){
                 threeOfAKind++;
+                threeHands.add(newPoker);
             }
             if(hand.equals("Two pair")){
                 twoPair++;
+                twoHands.add(newPoker);
             }
             if(hand.equals("One pair")){
                 onePair++;
+                oneHands.add(newPoker);
             }
             if(hand.equals("High card")){
                 highCard++;
+                highHands.add(newPoker);
             }
         }
         System.out.println("Number of five of a kind hands: " + fiveOfAKind);
@@ -56,9 +68,9 @@ public class Main {
         System.out.println("Number of two pair hands: " + twoPair);
         System.out.println("Number of one pair hands: " + onePair);
         System.out.println("Number of high card hands: " + highCard);
-        System.out.println("Total Hands: ");
         System.out.println();
         System.out.println("----------------------------------");
+
 
 
 
