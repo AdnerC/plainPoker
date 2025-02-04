@@ -10,6 +10,7 @@ public class Poker {
         bidAmount = bid;
         cards = suits;
     }
+
     public static String getHandType(String[] hand){
         //array to keep track of all types of cards(suits)
         int [] type = new int[13];
@@ -199,6 +200,19 @@ public class Poker {
 
     public String[] getCards() {
         return cards;
+    }
+
+    public static ArrayList<Poker> getHandSortedList(ArrayList<Poker> fiveHands, ArrayList<Poker> fourHands, ArrayList<Poker> fullHands, ArrayList<Poker> threeHands, ArrayList<Poker> twoHands, ArrayList<Poker> oneHands, ArrayList<Poker> highHands){
+
+        ArrayList<Poker> allHands = new ArrayList<Poker>();
+        allHands.addAll(highHands.reversed());
+        allHands.addAll(oneHands.reversed());
+        allHands.addAll(twoHands.reversed());
+        allHands.addAll(threeHands.reversed());
+        allHands.addAll(fullHands.reversed());
+        allHands.addAll(fourHands.reversed());
+        allHands.addAll(fiveHands.reversed());
+        return allHands;
     }
 
 

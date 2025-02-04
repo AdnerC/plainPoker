@@ -81,6 +81,18 @@ public class Main {
         Poker.sortHands(oneHands);
         Poker.sortHands(highHands);
 
+        ArrayList<Poker> allHands =Poker.getHandSortedList(fiveHands,fourHands,fullHands,threeHands,twoHands,oneHands,highHands);
+
+        int totalBidAmount=0;
+        int rank =1;
+
+        for (Poker hand : allHands){
+            int bidAmount = calcBidValue(hand.toString());
+            totalBidAmount+=rank*bidAmount;
+            rank++;
+        }
+        System.out.println("Total Bid Value: "+totalBidAmount);
+        System.out.println("Total Bid Value With Jack Wild");
 
 
 
@@ -106,7 +118,7 @@ public class Main {
 
     public static int calcBidValue(String fileDatum){
         int indexLine = fileDatum.indexOf("|");
-        int bidValue = Integer.parseInt(fileDatum.substring(indexLine+1));
+        int bidValue = Integer.parseInt(fileDatum.substring(indexLine+1).trim());
         return bidValue;
     }
 

@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e581c84-58eb-4f26-b0ef-3afc61bbd115" name="Changes" comment="created a sorting method for poker classes (untested due to hardware limitations)">
+    <list default="true" id="8e581c84-58eb-4f26-b0ef-3afc61bbd115" name="Changes" comment="added arrayLists for each hand type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Poker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Poker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestInputFile" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestInputFile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +26,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AdnerC/plainPoker&quot;,
-    &quot;accountId&quot;: &quot;32cbc224-f3fa-4c83-b6c1-c39535ae29aa&quot;
+    &quot;url&quot;: &quot;https://github.com/AdnerC/plainPoker.git&quot;,
+    &quot;accountId&quot;: &quot;3e4d9000-c676-46b1-b5ae-a867d60e84dd&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -46,6 +47,20 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="plainPoker" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -128,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738252722522</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added arrayLists for each hand type">
+      <option name="closed" value="true" />
+      <created>1738598219384</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1738598219384</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -145,6 +168,7 @@
     <MESSAGE value="Now properly displays the count of each hand type" />
     <MESSAGE value="created a method for comparing 2 different hands" />
     <MESSAGE value="created a sorting method for poker classes (untested due to hardware limitations)" />
-    <option name="LAST_COMMIT_MESSAGE" value="created a sorting method for poker classes (untested due to hardware limitations)" />
+    <MESSAGE value="added arrayLists for each hand type" />
+    <option name="LAST_COMMIT_MESSAGE" value="added arrayLists for each hand type" />
   </component>
 </project>
