@@ -5,35 +5,30 @@ public class Poker {
     private int bidAmount;
     private String[] cards;
 
-
+    //Initializes poker hand with an array for the types of cards
     public Poker(int bid, String[] suits){
         bidAmount = bid;
         cards = suits;
     }
-
+    //Determines type of poker hand
     public static String getHandType(String[] hand){
         //array to keep track of all types of cards(suits)
         int [] type = new int[13];
-        //type reads one line
+        //Counts appearances for each card
         for (String card : hand){
             int index = getCardIndex(card);
             if(index!=-1){
                 type[index]++;
             }
         }
-        //example for type
-        //{2,3,0,0,0,0,0,0,0,0,0,0,0}
-        //first count will be 2, next 3, then 0
-
+        //Checks for hand type based on counts
         for (int count : type){
-
             if (count==5){
                 return "Five of a kind";
             }
             if (count==4){
                 return "Four of a kind";
             }
-
             if(count == 3){
                 for (int j : type) {
                     if (j == 2) {
@@ -42,12 +37,10 @@ public class Poker {
                         return "Three of a kind";
                     }
                 }
-
             }
             if (count==2){
                 boolean onePair1 = false;
                 boolean onePair2 = false;
-
                 for (int j : type) {
                     if (j==2){
                         if (!onePair2 && onePair1){
@@ -58,7 +51,6 @@ public class Poker {
                         }
                     } else if (j==3) {
                         return "Full house";
-
                     }
                 }
                 if (onePair1&&onePair2){
@@ -66,18 +58,15 @@ public class Poker {
                 }else {
                     return "One pair";
                 }
-
                 }
-
         }
         return "High card";
-
     }
 
     public int countCards(){
         return 0;
     }
-
+    //Gets the index of each card 
     public static int getCardIndex(String card){
         //if a specific card type is found, its index is returned
         String[] cardTypes = {"Ace","King","Queen","Jack","10","9","8",
@@ -88,7 +77,7 @@ public class Poker {
         }
         return -1;
     }
-
+    //Compares 2 hands and returns the stronger hand
     public static String[] compareTwoHands(Poker first,Poker second){
         String[] firstHand = first.getCards();
         String[] secondHand = second.getCards();
@@ -110,7 +99,7 @@ public class Poker {
         }
         return cardTypes;
     }
-
+    //Sorts lists of poker hands from strongest to weakest
     public static void sortHands(ArrayList<Poker> hands) {
         int n = hands.size();
         for (int i = 0; i < n - 1; i++) {
@@ -124,7 +113,7 @@ public class Poker {
             }
         }
     }
-
+    //Assigns value to each hand for comparisons
     public static   int getTypeValue(String type){
         if (type.equals("Five of a kind")){
             return 100;
@@ -146,7 +135,7 @@ public class Poker {
         }
         return 9999;
     }
-
+    //Assigns value to each card to define their rank
     public static int getCardValue(String card){
         if (card.equals("Ace")){
             return 100;
@@ -193,7 +182,7 @@ public class Poker {
     public String toString() {
         return Arrays.toString(cards) + " | " + bidAmount;
     }
-
+    //Getter for bid amount 
     public int getBidAmount() {
         return bidAmount;
     }
@@ -201,7 +190,7 @@ public class Poker {
     public String[] getCards() {
         return cards;
     }
-
+    //Combines all sorted hand lists into a single list from strongest to weakest
     public static ArrayList<Poker> getHandSortedList(ArrayList<Poker> fiveHands, ArrayList<Poker> fourHands, ArrayList<Poker> fullHands, ArrayList<Poker> threeHands, ArrayList<Poker> twoHands, ArrayList<Poker> oneHands, ArrayList<Poker> highHands){
 
         ArrayList<Poker> allHands = new ArrayList<Poker>();
