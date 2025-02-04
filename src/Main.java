@@ -24,9 +24,11 @@ public class Main {
         ArrayList<Poker> highHands = new ArrayList<Poker>();
 
 
+
         ArrayList<String> fileData = getFileData("src/TestInputFile");
         // you now have a list of Strings from the file "TestInputFile"
         for (String fileDatum : fileData) {
+
 
             Poker newPoker = new Poker(calcBidValue(fileDatum), getCardList(fileDatum));
             hands.add(newPoker);
@@ -71,6 +73,13 @@ public class Main {
         System.out.println();
         System.out.println("----------------------------------");
 
+        Poker.sortHands(fiveHands);
+        Poker.sortHands(fourHands);
+        Poker.sortHands(threeHands);
+        Poker.sortHands(fullHands);
+        Poker.sortHands(twoHands);
+        Poker.sortHands(oneHands);
+        Poker.sortHands(highHands);
 
 
 

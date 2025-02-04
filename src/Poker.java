@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Poker {
@@ -109,6 +110,20 @@ public class Poker {
         return cardTypes;
     }
 
+    public static void sortHands(ArrayList<Poker> hands) {
+        int n = hands.size();
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (Poker.compareTwoHands(hands.get(j), hands.get(j + 1)) == hands.get(j + 1).getCards()) {
+                    //swaps hands
+                    Poker temp = hands.get(j);
+                    hands.set(j, hands.get(j + 1));
+                    hands.set(j + 1, temp);
+                }
+            }
+        }
+    }
+
     public static   int getTypeValue(String type){
         if (type.equals("Five of a kind")){
             return 100;
@@ -174,8 +189,8 @@ public class Poker {
         return 9999;
     }
 
-    public String toString(){
-        return cards+""+bidAmount;
+    public String toString() {
+        return Arrays.toString(cards) + " | " + bidAmount;
     }
 
     public int getBidAmount() {
