@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -102,7 +104,9 @@ public class Main {
         }
         System.out.println("Total Bid Value: "+totalBidAmount);
         System.out.println("Total Bid Value With Jack Wild");
-
+        String num = "f2a2r";
+        String se = "ar";
+        System.out.println(num.contains(se));
     }
 
     //Verifies data file is present

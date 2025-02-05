@@ -4,30 +4,41 @@ import java.util.Arrays;
 public class Poker {
     private int bidAmount;
     private String[] cards;
+    private static boolean jackWilds;
 
     //Initializes poker hand with an array for the types of cards
     public Poker(int bid, String[] suits){
         bidAmount = bid;
         cards = suits;
+        jackWilds =false;
     }
     //Determines type of poker hand
     public static String getHandType(String[] hand){
         //array to keep track of all types of cards(suits)
         int [] type = new int[13];
+        int indexCount = 0;
+        boolean hasJack =false;
         //Counts appearances for each card
         for (String card : hand){
             int index = getCardIndex(card);
             if(index!=-1){
                 type[index]++;
+                if (index==3){
+                    hasJack=true;
+                }
             }
         }
         //Checks for hand type based on counts
         for (int count : type){
+
             if (count==5){
                 return "Five of a kind";
             }
             if (count==4){
-                return "Four of a kind";
+                if (indexCount!=3){
+                    return "Four of a kind";
+
+                }
             }
             if(count == 3){
                 for (int j : type) {
@@ -60,6 +71,7 @@ public class Poker {
                     return "One pair";
                 }
                 }
+            indexCount++;
         }
         return "High card";
     }
@@ -147,8 +159,11 @@ public class Poker {
         if (card.equals("Queen")){
             return 85;
         }
-        if (card.equals("Jack")){
+        if (card.equals("Jack")&& !jackWilds) {
             return 80;
+        } else if (card.equals("Jack")&& jackWilds) {
+            return 5;
+
         }
         if (card.equals("10")){
             return 70;
@@ -190,6 +205,10 @@ public class Poker {
 
     public String[] getCards() { //gets the array with the cards
         return cards;
+    }
+
+    public void setJackWilds(boolean jackWilds) {
+        Poker.jackWilds = jackWilds;
     }
 
     //Combines all sorted hand lists into a single list from weakest to strongest

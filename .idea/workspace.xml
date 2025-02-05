@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e581c84-58eb-4f26-b0ef-3afc61bbd115" name="Changes" comment="added arrayLists for each hand type">
+    <list default="true" id="8e581c84-58eb-4f26-b0ef-3afc61bbd115" name="Changes" comment="Part 2 now works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Poker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Poker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,13 +142,13 @@
       <option name="project" value="LOCAL" />
       <updated>1738252722522</updated>
     </task>
-    <task id="LOCAL-00010" summary="created a sorting method for poker classes (untested due to hardware limitations)">
+    <task id="LOCAL-00010" summary="added arrayLists for each hand type">
       <option name="closed" value="true" />
-      <created>1738680170844</created>
+      <created>1738598219384</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1738680170844</updated>
+      <updated>1738598219384</updated>
     </task>
     <option name="localTasksCounter" value="11" />
     <servers />
