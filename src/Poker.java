@@ -39,6 +39,7 @@ public class Poker {
                 }
             }
             if (count==2){
+                //to check for multiple 2 pairs we have 2 booleans, and one only triggers if the other has already be triggered
                 boolean onePair1 = false;
                 boolean onePair2 = false;
                 for (int j : type) {
@@ -49,7 +50,7 @@ public class Poker {
                         if (!onePair1){
                             onePair1=true;
                         }
-                    } else if (j==3) {
+                    } else if (j==3) {// making sure we still get a full house even if we come across a two first
                         return "Full house";
                     }
                 }
@@ -63,9 +64,7 @@ public class Poker {
         return "High card";
     }
 
-    public int countCards(){
-        return 0;
-    }
+
     //Gets the index of each card 
     public static int getCardIndex(String card){
         //if a specific card type is found, its index is returned
@@ -82,7 +81,8 @@ public class Poker {
         String[] firstHand = first.getCards();
         String[] secondHand = second.getCards();
         String[] cardTypes = {"Ace","King","Queen","Jack","10","9","8",
-                "7","6","5","4","3","2"};
+                "7","6","5","4","3","2"};//list that contains all possible card
+        //initially compares the hand types
         if (getTypeValue(getHandType(firstHand))>getTypeValue(getHandType(secondHand))){
             return firstHand;
         }
@@ -90,6 +90,7 @@ public class Poker {
             return secondHand;
         }
 
+        //if types are the same: then compares the corresponding card indexes until there is a difference
         for (int i =0; i<firstHand.length;i++){
             if (getCardValue(firstHand[i])>getCardValue(secondHand[i])){
                 return firstHand;
@@ -99,11 +100,11 @@ public class Poker {
         }
         return cardTypes;
     }
-    //Sorts lists of poker hands from strongest to weakest
-    public static void sortHands(ArrayList<Poker> hands) {
-        int n = hands.size();
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
+
+    public static void sortHands(ArrayList<Poker> hands) {    //Sorts lists of poker hands from strongest to weakest
+        int n = hands.size();//size of the hand we are sorting
+        for (int i = 0; i < n - 1; i++) {// initial loop, runs n-1 amount of times
+            for (int j = 0; j < n - i - 1; j++) {//to make sure we don't iterate over already sorted values
                 if (Poker.compareTwoHands(hands.get(j), hands.get(j + 1)) == hands.get(j + 1).getCards()) {
                     //swaps hands
                     Poker temp = hands.get(j);
@@ -114,7 +115,7 @@ public class Poker {
         }
     }
     //Assigns value to each hand for comparisons
-    public static   int getTypeValue(String type){
+    public static   int getTypeValue(String type){ //returns the value of a card by assigning each type an arbitrary value
         if (type.equals("Five of a kind")){
             return 100;
         }
@@ -136,7 +137,7 @@ public class Poker {
         return 9999;
     }
     //Assigns value to each card to define their rank
-    public static int getCardValue(String card){
+    public static int getCardValue(String card){ // gets the value of a card based on an arbitrary value on the rank of the card
         if (card.equals("Ace")){
             return 100;
         }
@@ -179,21 +180,23 @@ public class Poker {
         return 9999;
     }
 
-    public String toString() {
+    public String toString() {// toString method
         return Arrays.toString(cards) + " | " + bidAmount;
     }
     //Getter for bid amount 
-    public int getBidAmount() {
+    public int getBidAmount() {//gets the bid amount
         return bidAmount;
     }
 
-    public String[] getCards() {
+    public String[] getCards() { //gets the array with the cards
         return cards;
     }
-    //Combines all sorted hand lists into a single list from strongest to weakest
+
+    //Combines all sorted hand lists into a single list from weakest to strongest
     public static ArrayList<Poker> getHandSortedList(ArrayList<Poker> fiveHands, ArrayList<Poker> fourHands, ArrayList<Poker> fullHands, ArrayList<Poker> threeHands, ArrayList<Poker> twoHands, ArrayList<Poker> oneHands, ArrayList<Poker> highHands){
 
-        ArrayList<Poker> allHands = new ArrayList<Poker>();
+        ArrayList<Poker> allHands = new ArrayList<Poker>();//arrayList is used for the addAll method
+        // must be reversed since the arrayLists are in strongest to weakest order
         allHands.addAll(highHands.reversed());
         allHands.addAll(oneHands.reversed());
         allHands.addAll(twoHands.reversed());
